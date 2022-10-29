@@ -1,12 +1,18 @@
-import { Button } from "@mui/material";
+import { Button, Container, ThemeProvider } from "@mui/material";
+import { useEffect } from "react";
+import Appbar from "./components/appbar/Appbar";
+import theme from "./styles/theme";
 
 function App() {
+  useEffect(() => {
+    document.title = "React Material UI-Home";
+  }, []);
   return (
-    <div className="App">
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <Appbar />
+      </Container>
+    </ThemeProvider>
   );
 }
 
